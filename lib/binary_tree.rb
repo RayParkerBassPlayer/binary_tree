@@ -1,4 +1,4 @@
-require "binary_tree_node"
+require_relative "binary_tree_node"
 
 class BinaryTree
   def initialize
