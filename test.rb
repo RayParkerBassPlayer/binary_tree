@@ -2,6 +2,7 @@ require_relative "lib/binary_tree"
 require "ruby-prof"
 
 def print_result(result)
+  puts
   printer = RubyProf::FlatPrinter.new(result)
   printer.print(STDOUT)
   puts
@@ -45,14 +46,14 @@ print_result(tree_fill_result)
 
 puts "Find an item in array..."
 array_find_result = RubyProf.profile do
-  array.find(array[array.count / 2])
+  array.find(array[array.count / 5])
 end
 
 print_result(array_find_result)
 
 puts "Find an item in tree..."
 tree_find_result = RubyProf.profile do
-  tree.find(array[array.count / 2])
+  tree.find(array[array.count / 5])
 end
 
 print_result(tree_find_result)

@@ -7,75 +7,81 @@ A simple binary tree implemented in Ruby.
 It works, and it's cute, but it is far slower than the highly optimized Ruby array.  Here is the output of the test.rb file with a million integers:
 
 Creating data...
+
 Loading array...
-Thread ID: 70357503662900
-Total: 0.129477
+
+Thread ID: 70208161274580
+Total: 0.127827
 Sort by: self_time
 
  %self      total      self      wait     child     calls  name
- 99.83      0.129     0.129     0.000     0.000        1   Array#each
-  0.17      0.129     0.000     0.000     0.129        1   Global#[No method]
+ 99.86      0.128     0.128     0.000     0.000        1   Array#each
+  0.14      0.128     0.000     0.000     0.128        1   Global#[No method]
 
 * indicates recursively called methods
 
 Sorting array...
-Thread ID: 70357503662900
-Total: 0.046971
+
+Thread ID: 70208161274580
+Total: 0.052135
 Sort by: self_time
 
  %self      total      self      wait     child     calls  name
- 99.95      0.047     0.047     0.000     0.000        1   Array#sort
-  0.05      0.047     0.000     0.000     0.047        1   Global#[No method]
+ 99.51      0.052     0.052     0.000     0.000        1   Array#sort
+  0.49      0.052     0.000     0.000     0.052        1   Global#[No method]
 
 * indicates recursively called methods
 
 Loading tree...
-Thread ID: 70357503662900
-Total: 57.004480
+
+Thread ID: 70208161274580
+Total: 52.652372
 Sort by: self_time
 
  %self      total      self      wait     child     calls  name
- 35.05     26.363    19.979     0.000     6.383  5158626   BinaryTreeNode#get_item
- 23.76     56.750    13.547     0.000    43.204   100000   BinaryTree#add_item
- 11.20      6.383     6.383     0.000     0.000  5158626   Kernel#is_a?
- 11.15     16.894     6.356     0.000    10.539  2056905   BinaryTreeNode#==
- 11.00     16.750     6.272     0.000    10.479  2052154   BinaryTreeNode#>
-  5.66      8.571     3.225     0.000     5.345  1049567   BinaryTreeNode#<
-  0.67      0.874     0.383     0.000     0.491    95250   Class#new
-  0.56      0.319     0.319     0.000     0.000    95250   BinaryTreeNode#initialize
-  0.45     57.004     0.254     0.000    56.750        1   Array#each
-  0.30      0.172     0.172     0.000     0.000    95250   <Class::BasicObject>#allocate
-  0.20      0.115     0.115     0.000     0.000    99999   Kernel#nil?
-  0.00     57.004     0.000     0.000    57.004        1   Global#[No method]
+ 34.49     23.744    18.159     0.000     5.585  4764805   BinaryTreeNode#get_item
+ 25.15     52.401    13.241     0.000    39.160   100000   BinaryTree#add_item
+ 11.29     15.711     5.945     0.000     9.766  1958192   BinaryTreeNode#==
+ 11.23     15.674     5.912     0.000     9.762  1953392   BinaryTreeNode#>
+ 10.61      5.585     5.585     0.000     0.000  4764805   Kernel#is_a?
+  4.90      6.797     2.580     0.000     4.216   853221   BinaryTreeNode#<
+  0.72      0.865     0.380     0.000     0.485    95201   Class#new
+  0.59      0.310     0.310     0.000     0.000    95201   BinaryTreeNode#initialize
+  0.48     52.652     0.251     0.000    52.401        1   Array#each
+  0.33      0.175     0.175     0.000     0.000    95201   <Class::BasicObject>#allocate
+  0.22      0.114     0.114     0.000     0.000    99999   Kernel#nil?
+  0.00     52.652     0.000     0.000    52.652        1   Global#[No method]
   0.00      0.000     0.000     0.000     0.000        1   NilClass#nil?
 
 * indicates recursively called methods
 
 Find an item in array...
-Thread ID: 70357503662900
-Total: 0.000027
+
+Thread ID: 70208161274580
+Total: 0.000047
 Sort by: self_time
 
  %self      total      self      wait     child     calls  name
- 55.56      0.000     0.000     0.000     0.000        1   Global#[No method]
- 29.63      0.000     0.000     0.000     0.000        1   Enumerable#find
- 14.81      0.000     0.000     0.000     0.000        1   Array#count
+ 61.70      0.000     0.000     0.000     0.000        1   Enumerable#find
+ 29.79      0.000     0.000     0.000     0.000        1   Global#[No method]
+  8.51      0.000     0.000     0.000     0.000        1   Array#count
 
 * indicates recursively called methods
 
 Find an item in tree...
-Thread ID: 70357503662900
-Total: 0.000696
+
+Thread ID: 70208161274580
+Total: 0.000510
 Sort by: self_time
 
  %self      total      self      wait     child     calls  name
- 36.78      0.000     0.000     0.000     0.000       63   BinaryTreeNode#get_item
- 19.68      0.001     0.000     0.000     0.001        1   BinaryTree#find_item
- 11.78      0.000     0.000     0.000     0.000       63   Kernel#is_a?
- 11.78      0.000     0.000     0.000     0.000       26   BinaryTreeNode#==
- 11.49      0.000     0.000     0.000     0.000       25   BinaryTreeNode#>
-  6.32      0.000     0.000     0.000     0.000       12   BinaryTreeNode#<
-  1.58      0.001     0.000     0.000     0.001        1   Global#[No method]
-  0.57      0.000     0.000     0.000     0.000        1   Array#count
+ 37.06      0.000     0.000     0.000     0.000       46   BinaryTreeNode#get_item
+ 19.80      0.000     0.000     0.000     0.000        1   BinaryTree#find_item
+ 12.94      0.000     0.000     0.000     0.000       46   Kernel#is_a?
+ 12.35      0.000     0.000     0.000     0.000       20   BinaryTreeNode#==
+ 10.78      0.000     0.000     0.000     0.000       19   BinaryTreeNode#>
+  4.12      0.000     0.000     0.000     0.000        7   BinaryTreeNode#<
+  2.35      0.001     0.000     0.000     0.000        1   Global#[No method]
+  0.59      0.000     0.000     0.000     0.000        1   Array#count
 
 * indicates recursively called methods
